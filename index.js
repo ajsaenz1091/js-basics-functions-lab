@@ -11,20 +11,20 @@
 // To complete all of your work assignments, you'll need to write four functions:
 
 // distanceFromHqInBlocks: Returns the number of blocks from Scuber's headquarters to the pickup location.
+
 function distanceFromHqInBlocks(street){
+    //Returns the number of blocks from Scuber's headquarters to the pickup 
+    //location.
     const hq = 42;
-    if(street > hq){
-        return street - hq;
-    }else{
-        return hq - street;
-    }   
+    return Math.abs(street - hq); //1
 }
 
 // Use the value returned by distanceFromHqInBlocks to calculate feet
 // 1block = 264 feet
+
 function distanceFromHqInFeet(street){
     //distanceFromHqInFeet please calculate blocks for distanceFromHqInFeet
-    return distanceFromHqInBlocks(street) * 264; // 1
+    return distanceFromHqInBlocks(street) * 264; // feet
 }
 
 function distanceTravelledInFeet(str1, str2){
@@ -33,14 +33,14 @@ function distanceTravelledInFeet(str1, str2){
 
 function calculatesFarePrice(start, destination){
     let price;
-    let distanceInFeet = distanceTravelledInFeet(start, destination);
+    let distanceInFeet = distanceTravelledInFeet(start, destination);// 528
     // The first four hundred feet are free
     if(distanceInFeet <= 400){
         return 0;
     }//between 400 and 2000 feet, the price is 2 cents per foot (not including 400, which are free!)
     else if(distanceInFeet > 400  && distanceInFeet < 2000){
-        price = (distanceInFeet - 400) * 0.02;
-        return price;
+        // price = (distanceInFeet - 400) * 0.02;
+        return (distanceInFeet - 400) * 0.02;
     }// Then Scuber charges a flat fare for a distance over 2000 feet and under 2500 feet.
     else if(distanceInFeet > 2000 && distanceInFeet < 2500){
         return 25;
